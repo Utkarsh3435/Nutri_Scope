@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-slate: #0f172a;
+    /* Deep Elite Slate */
+    --brand-mint: #10b981;
+    /* Medical Safety Mint */
+    --brand-teal: #0d9488;
+    /* Supported Accent */
+    --brand-surface: #f8fafc;
+    /* Clean Clinical Surface */
+  }
+
+  body {
+    @apply antialiased text-slate-900 overflow-x-hidden bg-white;
+    letter-spacing: -0.02em;
+    /* Elite Typography Tracking */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth Scrolling & Scrollbar Hide */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+
+  /* The "Living Aura" Background - Calmer & Deeper */
+  .bg-aurora {
+    background:
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.03) 0px, transparent 60%),
+      radial-gradient(at 100% 0%, rgba(13, 148, 136, 0.04) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(255, 255, 255, 0.9) 0px, transparent 50%);
+    background-color: #ffffff;
+  }
+
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-2xl border border-slate-100;
+    box-shadow: 0 4px 30px -4px rgba(15, 23, 42, 0.04);
+  }
+
+  /* Premium "Stripe-like" animated card */
+  .glass-card {
+    @apply bg-white rounded-[1.5rem] border border-slate-100;
+    box-shadow: 0 2px 12px -2px rgba(15, 23, 42, 0.03);
+    /* Tighter, more expensive shadow */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* "Quiet Luxury" easing */
+  }
+
+  .glass-card:hover {
+    @apply -translate-y-[2px];
+    box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.06);
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #0f172a, #334155);
+  }
+
+  /* Utility for premium glow */
+  .shadow-glow-mint {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.25);
+  }
+}
